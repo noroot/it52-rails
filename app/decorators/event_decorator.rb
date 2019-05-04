@@ -1,3 +1,4 @@
+# coding: utf-8
 class EventDecorator < Draper::Decorator
   delegate_all
 
@@ -42,7 +43,7 @@ class EventDecorator < Draper::Decorator
   end
 
   def link_to_place
-    base = "http://maps.yandex.ru/?text="
+    base = "https://www.openstreetmap.org/search?query="
     h.link_to URI.encode(base + object.place), target: "_blank", itemprop: 'location', itemscope: true, itemtype: 'http://schema.org/Place' do
       h.content_tag(:span, object.place, itemprop: 'address') +
       h.content_tag(:span, object.place, itemprop: 'name', class: 'hidden')
@@ -62,7 +63,7 @@ class EventDecorator < Draper::Decorator
     text ||= h.localize(object.started_at, format: :date_without_year) if object.started_at.year == Time.current.year
     text ||= h.localize(object.started_at, format: :date)
     h.link_to h.event_path(object, format: :ics), class: 'event-date-inversed' do
-      (h.content_tag :span, text, class: 'event-day') +
+      (h.content_tag :span, text + " ", class: 'event-day') +
       (h.content_tag :span, h.localize(object.started_at, format: :time), class: 'event-time')
     end
   end

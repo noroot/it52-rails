@@ -1,6 +1,6 @@
 ru:
-  app_name: Нижегородское IT–сообщество
-  app_description: 'IT и около в Нижнем Новгороде: конференции, митапы, хакатоны, встречи и, конечно, афтепати.'
+  app_name: Suckless Каталог IT-Событий
+  app_description: 'Suckless IT 52 Events'
   app_region: 52
   app_hashtag: it52
   app_keywords:
@@ -11,7 +11,7 @@ ru:
   - митап
   - встреча
   - программирование
-  - стартап
+  - suckless
   - '52'
 
   time:
@@ -140,6 +140,7 @@ ru:
       about: О сайте
       members: Участники
       communities: Сообщества
+      links: Ссылки
       donate: Спонсорам
       add_event_button_title: Добавить мероприятие
       hashtag: "Наш хештег #%{hashtag}"

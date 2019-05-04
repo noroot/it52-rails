@@ -65,3 +65,6 @@ nginx_rewrite.txt
 
 # Ignore javascript dependencies
 /node_modules/
+
+*~
+*.dump

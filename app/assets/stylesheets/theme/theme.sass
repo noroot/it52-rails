@@ -1,0 +1,110 @@
+html, body
+  height: 100%
+
+body
+  display: flex
+  flex-direction: column
+
+  & > main
+    flex: 1 0 auto
+
+  & > .navbar-footer
+  flex-shrink: 0
+
+body
+  font-smoothing: antialiased
+
+a
+  text-decoration: underline
+  
+#page-content
+  word-break: break-word
+  @media (min-width: $screen-xs)
+    padding: 0 0 2 * $line-height-computed
+    #social-links
+      a
+        color: $text-color
+        i.fas, span.gray
+          font-size: 1.3em
+        span.gray
+          color: $gray-lighter
+  @media (min-width: $screen-sm)
+    padding: $line-height-computed 0 2 * $line-height-computed
+
+.feed-icons a
+  padding: .5rem
+  display: inline-block
+.navbar-header
+  .navbar-brand
+    padding-top: 8px
+    margin-left: 14px
+  .navbar-logout
+    float: right
+
+@media (min-width: 768px)
+  .navbar
+    & > .container .navbar-brand,
+    & > .container-fluid .navbar-brand
+      margin-left: -22px
+
+
+.blink_me
+  animation: blinker 1s linear infinite
+
+@keyframes blinker
+  50%
+    opacity: 0
+
+.it52-logo
+  font-family: 'Fira Mono'
+  font-weight: 500
+  font-size: 26px
+  line-height: 1.4
+  color: #fefefe
+  position: relative
+  margin: 0
+  letter-spacing: -1px
+  &::first-letter
+    margin-right: -1px
+  &::after
+    content: 'T'
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    width: 1.45rem
+    background: #fefefe
+    color: $navbar-default-bg
+    text-align: center
+    animation: blinker 1s step-start infinite
+  &::before
+    content: '$'
+    position: absolute
+    top: 0
+    left: -1.6rem
+  &.member::before,
+  &.user::before
+    content: '~'
+  &.admin::before,
+  &.root::before
+    content: '#'
+
+body
+  padding-top: 70px
+
+.navbar.navbar-footer
+  margin-top: 20px
+  margin-bottom: 0
+  border-bottom: none
+  text-align: center
+
+.navbar-avatar
+  max-height: 20px !important
+  max-width: 20px !important
+  overflow: hidden
+  transform: scale(1.2) translateX(-5px)
+
+.nav.social-icons-wrapper
+  li
+    display: inline-block
+

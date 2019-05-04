@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_095130) do
+ActiveRecord::Schema.define(version: 2019_05_03_220426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_095130) do
     t.string "foreign_link"
     t.integer "pageviews", default: 0
     t.integer "kind", default: 0
+    t.boolean "is_corporate"
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
